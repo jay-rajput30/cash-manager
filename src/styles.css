@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  --color-black: hsl(217, 33%, 17%);
+  --color-gray: hsl(215, 19%, 35%);
+  --color-primary: hsl(205, 84%, 22%);
+  --color-secondary: hsl(212, 13%, 43%);
+  --color-white: hsl(0, 0%, 96%);
+  --color-background: hsl(60, 100%, 100%);
+  --color-button: hsl(206, 97%, 61%);
+  --color-light-gray: hsl(0, 0%, 90%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-black);
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-background);
+}
+
+h1 {
+  font-size: clamp(1.4rem, 1rem + 1.5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: clamp(0.5rem, 0.8rem + 1.5vw, 1.2rem);
+  color: var(--color-secondary);
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-black);
+}
+.bill-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border: 1px solid var(--color-light-gray);
+  padding: 1rem;
+  border-radius: 5px;
+}
+input {
+  color: var(--color-button);
+  background: var(--color-background);
+  border: 2px solid var(--color-button);
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bill-form > * {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: var(--color-button);
+  border: none;
+  padding: 0.4rem 1rem;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.change-note-container {
+  /* border: 2px solid var(--color-black); */
+  display: grid;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px;
+  padding: 0px;
+}
+
+.note-container {
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  border: 1px solid var(--color-gray);
+  padding: 0.2rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+@media (max-width: 370px) {
+  .notes-wrapper {
+    /* width: 70%;
+    margin-left: auto;
+    margin-right: auto; */
+  }
+  .change-note-container {
+    display: flex;
+    border: 2px solid var(--color-black);
+    border-right: none;
+  }
+  span {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--color-black);
+  }
+
+  .note-container {
+    max-width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    border-right: 2px solid var(--color-black);
+  }
+
+  .note-container + span {
+    border-bottom: 2px solid var(--color-black);
+  }
+}
